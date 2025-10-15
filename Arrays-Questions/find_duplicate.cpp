@@ -17,22 +17,36 @@ int find_duplicate(int arr[] , int size){
     return 0;
 }
 
+void find_all_duplicates(int arr[] , int size){
+    
+    int index = 0;
+    int store_duplicates[1000];
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                store_duplicates[index] = arr[j];
+                ++index;
+            }
+        }
+    }
+
+    for (int i = 0; i < index; i++)
+    {
+        cout << "The duplicate numbers are : " << store_duplicates[i] << " " << endl;
+    }
+}
+
 int main(){
     cout << endl;
 
-    int arr[] = {1,2,3,4,5,6,1};
+    int arr[] = {11,12,13,14,15,14,15,12};
     
     int size = sizeof(arr) / sizeof(arr[0]);
-    // cout << "array size : " << size << endl;
-
-    if(find_duplicate(arr, size)){
-        cout << "duplicate number is " << find_duplicate(arr, size) << endl;
-    } else {
-        cout << "No duplicates!" << endl;
-    }
-
-    cout << endl;
-    cout << "TIME COMPLEXITY BIG(0)N^2" << endl;
+    find_all_duplicates(arr , size);
         
     return 0;
 }
