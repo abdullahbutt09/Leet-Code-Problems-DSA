@@ -6,7 +6,7 @@ bool binarySearch(int arr[], int size, int key){
    int end = size - 1;
 
 //    int mid = (start + end) / 2;
-    int mid = start + (end - start) / 2;
+    int mid = start + (end - start) / 2; //! To avoid integer overflow
 
    while (start <= end)
    {
@@ -24,7 +24,7 @@ bool binarySearch(int arr[], int size, int key){
         }
 
         // mid = (start + end) / 2;
-        mid = start + (end - start) / 2;
+        mid = start + (end - start) / 2; //! To avoid integer overflow
    }
 
    return false;
