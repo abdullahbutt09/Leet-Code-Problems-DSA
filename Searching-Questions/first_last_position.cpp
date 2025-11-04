@@ -15,7 +15,7 @@ int first_position(int arr[], int size, int key){
             end = mid - 1;
         }
 
-        if(key > arr[mid]){
+        else if(key > arr[mid]){
             start = mid + 1;
         }
 
@@ -44,7 +44,7 @@ int last_position(int arr[], int size, int key){
             start = mid + 1;
         }
 
-        if(key > arr[mid]){
+        else if(key > arr[mid]){
             start = mid + 1;
         }
 
@@ -62,7 +62,6 @@ int last_position(int arr[], int size, int key){
 int main(){
 
     // first and last postion of an element in a sorted array
-
 
     cout << endl;
     // int arr[] = {1,2,3,4,4,5,6,8,9,10};
