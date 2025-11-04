@@ -65,10 +65,11 @@ int main(){
 
 
     cout << endl;
-    int arr[] = {1,2,3,4,4,5,6,8,9,10};
+    // int arr[] = {1,2,3,4,4,5,6,8,9,10};
+    int arr[] = {1,2,3,3,3,3,5};
     
     int size = sizeof(arr) / sizeof(arr[0]);
-    int key = 4;
+    int key = 3;
 
     int Left_Most_Position = first_position(arr, size, key);
     int Right_Most_Position = last_position(arr, size, key);
