@@ -27,16 +27,34 @@ long long int square_root(int number){
         }
         mid = start + (end - start) / 2;
     }
-    return mid;
+    return end;
+}
+
+double morePrecision(int n, int precision, int tempSol){
+    double factor = 1;
+    double answer = tempSol;
+
+    for (int i = 0; i < precision; i++)
+    {
+        factor = factor / 10;
+        for (double j = answer; j * j < n; j = j + factor)
+        {
+            answer = j;
+        }
+    }
+    return answer;
 }
 
 int main(){ 
     
     cout << endl;
+    int number = 37;
 
-    int result = square_root(1000000);
+    // int result = square_root(1000000);
+    int tempSolution = square_root(number);
+    double preciseSolution = morePrecision(number, 3, tempSolution);
 
-    cout << result << endl;
+    cout << preciseSolution << endl;
     
     return 0;
 }
